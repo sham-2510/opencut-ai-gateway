@@ -4,6 +4,12 @@ target/
 .env
 .env.*
 !.env.example
+
+# wrangler local secrets
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.wrangler/
 docs/
 
 # moon runtime cache

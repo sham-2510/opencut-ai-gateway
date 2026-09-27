@@ -9,6 +9,13 @@ tasks:
     options:
       runInCI: false  # dev server: skipped in CI, never cached
 
+  typecheck:
+    command: 'bun run typecheck'
+    inputs:
+      - 'src/**/*'
+      - 'tsconfig.json'
+      - 'package.json'
+
   build:
     command: 'bun run build'
     inputs:

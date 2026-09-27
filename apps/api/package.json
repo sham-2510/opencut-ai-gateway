@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "build": "wrangler deploy --dry-run"
+    "build": "wrangler deploy --dry-run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "elysia": "latest"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "latest",
+    "typescript": "^6.0.2",
     "wrangler": "latest"
   }
 }

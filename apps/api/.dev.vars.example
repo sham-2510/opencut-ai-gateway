@@ -1,0 +1,25 @@
+# Copy to `.dev.vars` for `wrangler dev`. `.dev.vars` is gitignored.
+# For deployed environments use `wrangler secret put <NAME>` instead —
+# vars in wrangler.jsonc are plaintext and end up in the deployment record.
+
+# Required. Created on https://xkiro.com/dashboard/api/keys — the full value is
+# shown once and stored only as a hash, so a lost key cannot be recovered.
+# Give each service its own key so usage attribution stays readable, and set a
+# monthly spending limit on it.
+XKIRO_API_KEY=
+
+# Optional. Override the upstream base URL.
+# XKIRO_BASE_URL=https://api.xkiro.com/v1
+
+# Optional but recommended in production: restrict which models this Worker
+# will pay for. Comma-separated, full `vendor/model` IDs. Speech IDs are bare.
+# XKIRO_ALLOWED_MODELS=openai/gpt-5.6-sol,xkiro-voice
+
+# Optional. Browser origins allowed to call /ai/*. Without this, no CORS
+# headers are sent and only same-origin or server-side callers get through.
+# AI_ALLOWED_ORIGINS=http://localhost:5173,https://new.opencut.app
+
+# Strongly recommended for any publicly reachable deployment. When set, callers
+# must send it as `x-opencut-ai-token`. Without it, anyone who can reach the
+# Worker can spend the xKiro balance.
+# AI_GATEWAY_TOKEN=
